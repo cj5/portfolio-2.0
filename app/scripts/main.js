@@ -40,13 +40,27 @@ $('a[href*="#"]')
   });
 
   let projectImageWidth = $('.projects img').width();
-  let projectImageHeight = $('.projects img').height();  
-
+  let projectImageHeight = $('.projects img').height();
   $('.img-overlay').css('width', projectImageWidth);
   $('.img-overlay').css('height', projectImageHeight);
 
+  let headerHt = $('header').outerHeight();
+  console.log('headerHt: ' ,headerHt);
+  
+  $(window).scroll(function() {
+    console.log('px scrolled from top: ', $(window).scrollTop());
+    if ($(window).scrollTop() >= headerHt) {
+      $('#sticky-header').css('top', 0);
+    } else {
+      $('#sticky-header').css('top', -200);
+    }
+  });
+
   function updateContainer() {
-    
+    let projectImageWidth = $('.projects img').width();
+    let projectImageHeight = $('.projects img').height();  
+    $('.img-overlay').css('width', projectImageWidth);
+    $('.img-overlay').css('height', projectImageHeight);
   }
 
   $(window).resize(function() {
