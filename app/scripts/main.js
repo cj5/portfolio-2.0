@@ -1,42 +1,14 @@
 console.log('Portfolio-2.0');
 
-$(document).ready(function(){
+$(document).ready(function(){  
 
-// Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 500, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
-        });
-      }
-    }
+  // smooth scroll
+  $(document).on('click', 'a[href^="#"]', function (event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+      }, 500);
   });
 
   let projectImageWidth = $('.projects img').width();
@@ -54,6 +26,20 @@ $('a[href*="#"]')
     } else {
       $('#sticky-header').css('top', -200);
     }
+  });
+
+  // for navicon transition
+  // $('.lines-button').click(function() {
+  //     $(this).toggleClass('close');
+  //     $('.menu').toggleClass('open');           
+  // });
+
+  $('#navicon p').click(function() {
+    $('#mobile-nav-menu').css('transform', 'none');
+  });
+
+  $('#mobile-nav-menu p.close, #mobile-nav-menu a').click(function() {
+    $('#mobile-nav-menu').css('transform', 'translateX(200%)');
   });
 
   function updateContainer() {

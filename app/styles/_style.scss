@@ -42,6 +42,9 @@ ul {
 .uppercase {
   text-transform: uppercase;
 }
+.capitalize {
+  text-transform: capitalize;
+}
 .bold {
   font-weight: bold;
 }
@@ -72,6 +75,110 @@ ul {
 }
 #slide-2 {
   animation: 0.6s ease-in-out slideInFromBottom;
+}
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+  filter: alpha(opacity=50);
+}
+
+// Navicon ~~~~~~~~~~
+  .navicon {
+    position: relative;
+    z-index: 9999;
+  }
+  .lines-button {
+    display: inline-block;      
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    border-radius: $button-size/7;
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    color: $color-1;
+    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      transition: 0.2s;        
+    }
+  }
+  .lines {
+    //create middle line
+    display: inline-block;
+    width: 25px;
+    height: 3px;
+    background: $color-1;
+    border-radius: 10px; 
+    transition: 0.4s;
+    position: relative; 
+    /*create the upper and lower lines as pseudo-elements of the middle line*/
+    &:before, &:after {
+      display: inline-block;
+      width: 25px;
+      height: 3px;
+      background: $color-1;
+      border-radius: 10px; 
+      transition: 0.4s;
+      position: absolute;
+      left:0;
+      content: '';
+      transform-origin: $button-size/14 center;
+    }
+    &:before { top: $button-size/4; }
+    &:after { top: -$button-size/4; }
+  }
+  .lines-button.x.close .lines {
+    /*hide the middle line*/
+    background: transparent;
+    top: -5px;
+    position: relative;
+    z-index: 900;
+    /*overlay the lines by setting both their top values to 0*/
+    &:before, &:after{
+      transform-origin: 50% 50%;
+      top:0;
+      width: 25px;
+      background: white;
+    }
+    // rotate the lines to form the x shape
+    &:before{
+        transform: rotate3d(0, 0, 1, 45deg); 
+    }
+    &:after{
+      transform: rotate3d(0, 0, 1, -45deg); 
+    }
+  }
+  .close {
+    opacity: 1;
+  }
+  button {
+    display: inline-block;
+    margin: 0 1em;
+    border: none;
+    background: none;
+  }
+  button:focus {
+    outline: none;
+  }
+
+.mobile-nav {
+  display: none;
+  #navicon {
+    height: auto;
+    p {
+      font-size: $ft-md;
+      line-height: 24px;
+      margin: 0;
+      cursor: pointer;
+    }
+  }
 }
 
 // Header ~~~~~~~~~~~
@@ -113,6 +220,9 @@ header {
       }
     }
   }
+  .mobile-nav {
+    display: none;
+  }
 }
 
 // Sticky Header ~~~~~~~~~~~
@@ -123,27 +233,42 @@ header {
   position: fixed;
   top: -200px;
   width: 100%;
-  z-index: 9999;
+  z-index: 99999;
   box-shadow: 0 10px 25px rgba(15,27,255,0.25);
-  @include transition();
-  h1 {
-    color: #fff;
-    font-size: $ft-sm;
-    line-height: 20px;
-    padding: 4px 8px;
+  @include transition-slow();
+  .to-top {
     position: relative;
     right: 8px;
     display: inline-block;
     @include transition();
-    .icon {
-      font-size: $ft-lg;
-      position: relative;
-      top: 3px;
+    h1 {
+      color: #fff;
+      font-size: $ft-sm;
+      line-height: 20px;
+      padding: 4px 46px 4px 8px;
+      display: inline-block;
+      @include transition();
     }
     &:hover {
       background-color: #fff;
       color: $color-1;
     }
+    &:hover h1, &:hover .icon {
+      color: $color-1;
+      fill: $color-1;      
+    }
+  }    
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    font-size: 24px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;      
+    fill: #fff;
+    @include transition();
   }
   ul.nav {  
     float: right;
@@ -163,9 +288,68 @@ header {
       }
     }
   }
+  .lines-button.x.close .lines {
+    background: transparent;
+  }
+  .lines {
+    background: #fff;
+    &:before, &:after {
+      background: #fff;
+    }
+  }
+  .mobile-nav {
+    #navicon {
+      height: auto;
+      p {
+        color: #fff;
+        font-size: $ft-md;
+        line-height: 24px;
+      }
+    }
+  }
 }
 
-svg {
+// Mobile Menu ~~~~~~~~~~~
+#mobile-nav-menu {
+  // display: none;
+  background: $color-1;
+  opacity: 0.92;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(200%);
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  @include transition();
+  .menu {
+    margin-top: 88px;
+    text-align: right;
+    display: block;
+    // width: 200px;    
+    ul {
+      float: right;
+      border-top: 2px solid #fff;
+      padding-top: 12px;
+    }
+    a {
+      font-size: $ft-lg;
+      color: #fff;
+      li {
+        margin-bottom: $mg-xs;
+        color: #fff;
+      }      
+    }
+  }
+  p.close {
+    position: relative;
+    top: 30px;
+    color: #fff;
+    font-size: $ft-md;
+  }
+}
+
+svg.hide {
   display: none;
 }
 
@@ -178,7 +362,7 @@ svg {
     width: 100%;
     padding: 50px 0;
     .call-box {
-      width: 500px;
+      max-width: 500px;
       margin: 0 auto;
       // border: 2px solid $color-1;
       text-align: center;
@@ -186,6 +370,7 @@ svg {
       animation: 0.6s ease-in-out slideInFromBottom;      
       h2 {
         font-size: $ft-xxl;
+        line-height: 40px;
         margin-bottom: $mg-sm;
       }
       .contact-wrapper {
@@ -302,7 +487,12 @@ svg {
           h4 {
             font-size: $ft-sm;
             text-transform: uppercase;
-            margin-bottom: 2px;                        
+            margin-bottom: 2px;
+            span {
+              font-size: $ft-xs;
+              position: relative;
+              bottom: 1px;
+            }                        
           }
           p {
             font-style: italic;
@@ -384,6 +574,10 @@ svg {
     &:last-child {
       margin-bottom: 0;
     }
+    span.new-line-mobile {
+      font-style: italic;
+      font-size: 14px; 
+    }
   }
   .left {
     width: 18%;
@@ -415,6 +609,9 @@ svg {
       padding: 0;
       float: left;
       display: inline-block;
+    }
+    .mobile-skills-list {
+      display: none;
     }
   }
   .experience {
@@ -457,14 +654,43 @@ svg {
 footer {
   background: $color-1;
   padding: 14px 0;
-  a {
+  overflow: hidden;
+  height: 70px;
+  .to-top {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
     float: right;
-    color: #fff;
-    font-size: $ft-lg;
-    padding: 0 10px;
-    &:hover {
-      background: #fff;
-      color: $color-1;
+    a {
+      background: transparent;
+      float: right;
+      color: #fff;
+      font-size: $ft-lg;
+      padding: 0 10px;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      &:hover {
+        background: #fff;
+        color: $color-1;
+      }
+      &:hover .icon {
+        fill: $color-1;
+      }
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateY(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        display: inline-block;
+        width: 1em;
+        height: 1em;      
+        fill: #fff;
+        @include transition();
+      }
     }
   }
   .copy-icon {
@@ -477,4 +703,165 @@ footer {
     position: absolute;
     color: #fff;
   }
+  .right {
+    a {
+      @include transition();
+    }
+  }
+}
+
+// Media Queries ~~~~~~~~~
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+  
+}
+
+@media screen and (max-width: 768px) {
+  header, #sticky-header {
+    .left {
+      width: 75%;
+      margin: 0;
+    }
+    .right {
+      width: 20%;
+      margin-left: 5%;
+    }    
+  } 
+  #sticky-header {
+    a .to-top {
+      &:hover h1, &:hover .icon {               
+        color: #fff;
+        fill: #fff;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }  
+  #landing .call-box-wrapper .call-box .contact-wrapper a .icon:hover {
+    fill: $color-1;
+    background-color: #fff;
+  }
+  #landing .call-box-wrapper .call-box .hover-group:hover .call-text {
+    background-color: #fff;
+    color: $color-1;
+  }
+  #landing .call-box-wrapper .call-box .hover-group:hover .point {
+    transform: translateY(0);
+  }
+  #contact .contact-wrapper a .icon:hover {
+    fill: $color-1;
+    background-color: #fff;
+  }
+  footer .to-top a:hover {
+    background: $color-1;
+    color: #fff;
+  }
+  footer .to-top a:hover .icon {
+    fill: #fff;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-nav {
+    float: right;      
+    display: inline-block !important;
+  }
+  #projects .projects .img-wrap {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 0 40px !important;
+    float: none;
+  }
+  #about {
+    .left {
+      width: 100%;
+      margin: 0;
+    }
+    .right {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    h4 {
+      margin-bottom: 20px;
+      display: inline-block;
+      border-bottom: 2px solid $color-1;
+      padding-bottom: 3px;      
+    }  
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #about h5 {
+    // font-size: 14px;
+  }
+  .experience {
+    span.hide-mobile {
+      display: none;
+    }
+    span.new-line-mobile {
+      width: 100%;
+      display: inline-block;
+      margin-top: 6px;      
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+}
+
+@media screen and (max-width: 420px) {
+  #sticky-header h1 {    
+    font-size: 18px;
+  }
+  #projects .projects .img-wrap {
+    &:hover {
+      box-shadow: none;
+    }
+    &:hover .img-overlay {
+      background: transparent;
+    }
+    &:hover .overlay-wrap {
+      opacity: 0;
+    }
+    &:hover .slide-right {
+      display: none;
+    }
+    &:hover .slide-right-slow {
+      display: none;
+    }
+  }
+  #landing .call-box-wrapper .call-box h2 {
+    font-size: 34px;
+  }
+  #about {
+    .skills {
+      .desktop-skills-list {
+        display: none;
+      }
+      .mobile-skills-list {
+        display: inline-block;
+        width: 100%;
+        ul {
+          width: 48%;
+          margin-right: 2%;
+
+        }
+      }
+    }
+  }
+  footer {
+    p {
+      font-size: 11px;
+    }
+    .copy-icon {
+      font-size: 24px;
+    }
+  } 
 }
