@@ -11,16 +11,21 @@ $(document).ready(function(){
       }, 500);
   });
 
-  let projectImageWidth = $('.projects img').width();
-  let projectImageHeight = $('.projects img').height();
-  $('.img-overlay').css('width', projectImageWidth);
-  $('.img-overlay').css('height', projectImageHeight);
+  $('body').css('overflow-y', 'hidden');
+  let vpW = $(window).width();
+  console.log('vp width: ', vpW);
+  $('body').css('overflow-y', 'visible');
+
+  let projImgW = $('.projects img').width();
+  let projImgH = $('.projects img').height();
+  $('.img-overlay').css('width', projImgW);
+  $('.img-overlay').css('height', projImgH);
 
   let headerHt = $('header').outerHeight();
-  console.log('headerHt: ' ,headerHt);
+  // console.log('headerHt: ' ,headerHt);
   
   $(window).scroll(function() {
-    console.log('px scrolled from top: ', $(window).scrollTop());
+    // console.log('px scrolled from top: ', $(window).scrollTop());
     if ($(window).scrollTop() >= headerHt) {
       $('#sticky-header').css('top', 0);
     } else {
@@ -38,15 +43,33 @@ $(document).ready(function(){
     $('#mobile-nav-menu').css('transform', 'none');
   });
 
-  $('#mobile-nav-menu p.close, #mobile-nav-menu a').click(function() {
+  $('#mobile-nav-menu p.close-x, #mobile-nav-menu a').click(function() {
     $('#mobile-nav-menu').css('transform', 'translateX(200%)');
   });
 
+  let alignMobProjCap = ((vpW - (projImgW - 2)) / 2) - 24;
+  console.log('proj img W: ', projImgW);
+  console.log('align cap: ', alignMobProjCap);
+  // $('.mobile-project-caption').css('left', alignMobProjCap);
+  $('.mobile-project-caption').css('width', projImgW);
+
+
   function updateContainer() {
-    let projectImageWidth = $('.projects img').width();
-    let projectImageHeight = $('.projects img').height();  
-    $('.img-overlay').css('width', projectImageWidth);
-    $('.img-overlay').css('height', projectImageHeight);
+    $('body').css('overflow-y', 'hidden');
+    let vpW = $(window).width();
+    console.log('vp width: ', vpW);
+    $('body').css('overflow-y', 'visible');
+
+    let projImgW = $('.projects img').width();
+    let projImgH = $('.projects img').height();  
+    $('.img-overlay').css('width', projImgW);
+    $('.img-overlay').css('height', projImgH);
+
+    let alignMobProjCap = ((vpW - (projImgW - 2)) / 2) - 26;
+    console.log('proj img W: ', projImgW);
+    console.log('align cap: ', alignMobProjCap);
+    // $('.mobile-project-caption').css('left', alignMobProjCap);
+    $('.mobile-project-caption').css('width', projImgW);
   }
 
   $(window).resize(function() {
