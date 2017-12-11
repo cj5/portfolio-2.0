@@ -24,7 +24,8 @@ h1,h2,h2,h4 {
   margin: 0;
 }
 a,p,li {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 18px;
 }
 a {
   color: $color-1;
@@ -395,7 +396,7 @@ svg.hide {
         a {
           margin: 0 4px;
           .icon {
-            font-size: 28px;
+            font-size: 32px;
             display: inline-block;
             width: 1em;
             height: 1em;
@@ -431,6 +432,7 @@ svg.hide {
         position: relative;
         padding-top: 8px;
         bottom: 10px;
+        line-height: 58px;
         @include transition();
       }
       .hover-group:hover .call-text {
@@ -489,7 +491,7 @@ svg.hide {
     .img-wrap {
       border: 1px solid #ddd;
       width: 49%;
-      margin: 14px 1%;
+      margin: 11px 1%;
       display: inline-block;
       float: left; 
       overflow: hidden;
@@ -668,7 +670,7 @@ svg.hide {
         margin-bottom: 0;
       }
       li {
-        line-height: 17px;
+        line-height: 18px;
         margin-bottom: 12px;
         &:last-child {
           margin-bottom: 0;
@@ -683,7 +685,7 @@ svg.hide {
     ul {
       margin-top: 24px;
       li {        
-        line-height: 17px;
+        line-height: 18px;
         margin-bottom: 12px;
         &:last-child {
           margin-bottom: 0;
@@ -783,10 +785,15 @@ footer {
 
 // Media Queries ~~~~~~~~~
 @media screen and (max-width: 1200px) {
-
+  #projects .projects .img-wrap {
+    margin: 10px 1%;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  #projects .projects .img-wrap {
+    margin: 7px 1%;
+  }
   #projects .projects .img-wrap .img-overlay .overlay-wrap h4 {
     font-size: 18px;
   }
@@ -925,6 +932,9 @@ footer {
 }
 
 @media screen and (max-width: 420px) {
+  a,p,li {
+    font-size: 13px;    
+  }
   #sticky-header h1 {    
     font-size: 18px;
   }
