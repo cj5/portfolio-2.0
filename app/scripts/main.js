@@ -16,6 +16,8 @@ $(document).ready(function(){
   console.log('vp width: ', vpW);
   $('body').css('overflow-y', 'visible');
 
+  let projImgW = $('.projects img').width();
+  let projImgH = $('.projects img').height();
   $(window).on('load', function() {
     let projImgW = $('.projects img').width();
     let projImgH = $('.projects img').height();

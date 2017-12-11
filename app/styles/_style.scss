@@ -417,6 +417,7 @@ svg.hide {
       }
       .call-text {
         font-size: $ft-xs;
+        line-height: 22px;
         display: inline-block;
         width: auto;
         padding: 2px 12px 4px;
@@ -448,8 +449,7 @@ svg.hide {
   }
 }
 
-.section {  
-  // min-height: 1000px;
+.section {
   margin-bottom: $mg-xl;
   border-top: 2px solid $color-1;
   padding-top: 20px;
@@ -470,19 +470,12 @@ svg.hide {
     display: inline-block;
     width: 100%;
     padding: 10px 0;
-    // background-color: rgba(15,27,255,1);
-    // opacity: 0.2;
     position: relative;
     text-align: left;    
     display: none;
     border-top: 2px solid $color-1;
-    // border-left: 2px solid $color-1;
-    // border-right: 2px solid $color-1;
     h4 {        
       text-transform: uppercase;                
-    }
-    h4, p {
-      // color: #fff;
     }
   }
   .projects {    
@@ -508,7 +501,7 @@ svg.hide {
       }
       .img-overlay {        
         position: absolute;
-        background: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0);
         @include transition();
         z-index: 999;
         top: 0px;
@@ -534,8 +527,8 @@ svg.hide {
           p {
             font-style: italic;
             border-bottom: 1px solid #fff;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
+            margin-bottom: 26px;
+            padding-bottom: 14px;
           }
           .left, .right {
             width: auto;
@@ -559,7 +552,8 @@ svg.hide {
             padding: 0;
           }
           li {
-            font-size: 16px;
+            font-size: 18px;
+            line-height: 26px;
           }          
         }        
       }
@@ -788,11 +782,22 @@ footer {
   #projects .projects .img-wrap {
     margin: 10px 1%;
   }
+  #projects .projects .img-wrap .img-overlay .overlay-wrap li {        
+    font-size: 16px;
+    line-height: 22px;
+  }
+  #projects .projects .img-wrap .img-overlay .overlay-wrap p {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
 }
 
 @media screen and (max-width: 992px) {
   #projects .projects .img-wrap {
     margin: 7px 1%;
+  }
+  #projects .projects .img-wrap .img-overlay {
+    padding: 14px;
   }
   #projects .projects .img-wrap .img-overlay .overlay-wrap h4 {
     font-size: 18px;
@@ -800,9 +805,17 @@ footer {
   #projects .projects .img-wrap .img-overlay .overlay-wrap p {
     margin-bottom: 10px;
     font-size: 12px;
+    padding-bottom: 8px;
   }
   #projects .projects .img-wrap .img-overlay .overlay-wrap li {    
     font-size: 14px;
+    line-height: 18px;
+  }
+  #projects .projects .img-wrap .arrow {
+    bottom: 8px;
+  }
+  #projects .projects .img-wrap:hover .slide-right-slow {
+    left: 12px!important;
   }
 }
 
