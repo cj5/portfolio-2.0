@@ -16,10 +16,12 @@ $(document).ready(function(){
   console.log('vp width: ', vpW);
   $('body').css('overflow-y', 'visible');
 
-  let projImgW = $('.projects img').width();
-  let projImgH = $('.projects img').height();
-  $('.img-overlay').css('width', projImgW);
-  $('.img-overlay').css('height', projImgH);
+  $(window).on('load', function() {
+    let projImgW = $('.projects img').width();
+    let projImgH = $('.projects img').height();
+    $('.img-overlay').css('width', projImgW);
+    $('.img-overlay').css('height', projImgH);
+  });
 
   let headerHt = $('header').outerHeight();
   // console.log('headerHt: ' ,headerHt);
