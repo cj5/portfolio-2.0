@@ -345,6 +345,7 @@ header {
         font-size: $ft-lg;
         margin-bottom: $mg-xs;
         color: #fff;
+        line-height: 40px;
       }      
     }
   }
@@ -372,6 +373,9 @@ svg.hide {
 
 // Landing ~~~~~~~~~~~
 #landing {
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
   // background: $color-2;
   // border-bottom: 2px solid $color-1;
   .call-box-wrapper {
@@ -392,9 +396,10 @@ svg.hide {
       }
       .contact-wrapper {
         animation: 0.65s ease-in-out slideInFromBottom;
-        margin-bottom: $mg-sm;        
+        margin-bottom: $mg-sm;
+        position: relative;
         a {
-          margin: 0 4px;
+          margin: 0 4px;          
           .icon {
             font-size: 32px;
             display: inline-block;
@@ -414,6 +419,7 @@ svg.hide {
       }
       .hover-group {
         animation: 1.1s ease-in-out slideInFromBottom;
+        position: relative;      
       }
       .call-text {
         font-size: $ft-xs;
@@ -776,6 +782,36 @@ footer {
     }
   }
 }
+
+// ~~~~~~~~~~~~~~~
+// cellular automata
+.wrapper {
+  position: absolute;
+  width: 120%;
+}
+.wrapper, .row {
+  display: inline-block;
+  float: left;
+}
+.row {
+  transition: 0.2s all ease-in-out;
+}
+.row div {
+  display: inline-block;
+  float: left;
+  width: 10px;
+  height: 10px;
+  // border-radius: 50%;
+  overflow-wrap: break-word;
+}
+
+.row div.true {  
+  background-color: rgba(15,27,255,0.05); // 0.04
+}
+.row div.false {
+  background-color: rgba(15,27,255,0.0);  
+}
+// ~~~~~~~~~~~~~~~
 
 // Media Queries ~~~~~~~~~
 @media screen and (max-width: 1200px) {
