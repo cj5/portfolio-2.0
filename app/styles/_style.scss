@@ -971,6 +971,22 @@ footer {
       margin-top: 6px;      
     }
   }
+  #about {
+    .skills {
+      .desktop-skills-list {
+        display: none;
+      }
+      .mobile-skills-list {
+        display: inline-block;
+        width: 100%;
+        ul {
+          width: 48%;
+          margin-right: 2%;
+
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -999,22 +1015,6 @@ footer {
     margin: 0 0 60px !important;
     float: none;    
   }
-  #about {
-    .skills {
-      .desktop-skills-list {
-        display: none;
-      }
-      .mobile-skills-list {
-        display: inline-block;
-        width: 100%;
-        ul {
-          width: 48%;
-          margin-right: 2%;
-
-        }
-      }
-    }
-  }
   footer {
     p {
       font-size: 11px;
@@ -1023,4 +1023,11 @@ footer {
       font-size: 24px;
     }
   } 
+}
+
+@media screen and (max-width: 350px) {
+  #about .skills ul:last-child {
+    width: 42%;
+    margin-left: 6%;
+  }
 }
