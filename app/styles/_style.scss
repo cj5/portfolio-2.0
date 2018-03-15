@@ -75,10 +75,10 @@ ul {
   font-size: 11px;
 }
 
-#slide-1 {
+.slide-1 {
   animation: 0.4s ease-in-out slideInFromBottom;
 }
-#slide-2 {
+.slide-2 {
   animation: 0.6s ease-in-out slideInFromBottom;
 }
 .close:hover, .close:focus {
@@ -229,6 +229,11 @@ header {
   .mobile-nav {
     display: none;
   }
+}
+
+.project-details header a:hover h1 {
+  background-color: $color-1;
+  color: #fff;
 }
 
 // Sticky Header ~~~~~~~~~~~
@@ -725,6 +730,47 @@ svg.hide {
           margin-bottom: 0;
         }
       }      
+    }
+  }
+}
+
+#details {
+  padding: 100px 0;
+  img {
+    width: 70%;    
+    border: 2px solid #0F1BFF;
+  }
+  h2 {
+    margin-top: 50px;
+  }
+  h4 {
+    margin-top: 6px;
+    font-style: italic;
+  }
+  p {
+    line-height: 22px;
+    margin-top: 50px;
+  }
+  ul {
+    margin-top: 50px;
+    padding-left: 20px;
+    list-style: disc;
+  }
+  li {
+    margin-bottom: 14px;
+  }
+  .left {
+    display: inline-block;
+    width: 47%;
+    margin-right: 3%;    
+  }
+  .right {
+    display: inline-block;
+    width: 47%;
+    margin-left: 3%;
+    img {
+      width: 100%;
+      margin-bottom: 30px;      
     }
   }
 }
