@@ -484,13 +484,15 @@ svg.hide {
       text-transform: uppercase;                
     }
   }
-  .projects {    
+  .projects {
     display: inline-block;
     width: 100%;        
     .img-wrap {
-      border: 1px solid #ddd;
-      width: 49%;
-      margin: 11px 1%;
+      // border: 1px solid #ddd;
+      // width: 49%;
+      width: 50%;
+      // margin: 11px 1%;
+      margin: 0px 0%;
       display: inline-block;
       float: left; 
       overflow: hidden;
@@ -499,70 +501,14 @@ svg.hide {
       @include transition();
       &:nth-of-type(odd) {        
         margin-left: 0;
-        margin-right: 1%;
+        // margin-right: 1%;
+        margin-right: 0%;
       }
       &:nth-of-type(even) { 
         margin-right: 0;
-        margin-left: 1%;
-      }
-      .img-overlay {        
-        position: absolute;
-        background: rgba(255,255,255,0);
-        @include transition();
-        z-index: 999;
-        top: 0px;
-        left: 0px;
-        padding: 20px;        
-        .overlay-wrap {
-          opacity: 0;
-          position: relative;
-          z-index: 999;
-          color: #fff;
-          text-align: left;
-          @include transition();
-          h4 {
-            font-size: $ft-sm;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-            span {
-              font-size: $ft-xs;
-              position: relative;
-              bottom: 1px;
-            }                        
-          }
-          p {
-            font-style: italic;
-            border-bottom: 1px solid #fff;
-            margin-bottom: 26px;
-            padding-bottom: 14px;
-          }
-          .left, .right {
-            width: auto;
-          }
-          .left {
-            margin-right: 50px;
-          }
-          .right {
-            float: none;
-          }
-          .slide-right {
-            position: relative;
-            left: -300px;
-            @include transition();
-          }
-          .slide-right-slow {            
-            left: -300px;
-            @include transition-slow();
-          }
-          ul {
-            padding: 0;
-          }
-          li {
-            font-size: 18px;
-            line-height: 26px;
-          }          
-        }        
-      }
+        // margin-left: 1%;
+        margin-left: 0%;
+      }      
       &:hover {
         box-shadow: 0 0 25px rgba(15,27,255,0.5);
       }
@@ -577,10 +523,40 @@ svg.hide {
       }
       &:hover .slide-right-slow {
         left: 17px !important;
-      }      
+      }
       img {
         width: 100%;
         height: auto;
+      }
+      img.proj-1 {
+        background: #B8D0FF;
+      }
+      img.proj-2 {
+        background: #1EB8ED;
+      }
+      img.proj-3 {
+        background: #ddd;
+      }
+      img.proj-4 {
+        background: #AAE857;
+      }
+      img.proj-5 {
+        background: #C3EAFF;
+      }
+      img.proj-6 {
+        background: #eee;
+      }
+      img.proj-7 {
+        background: #F5F5F5;
+      }
+      img.proj-8 {
+        background: #111111;
+      }
+      img.proj-9 {
+        background: #333;
+      }
+      img.proj-10 {
+        background: #5FB8A1;
       }
       .arrow {
         color: #fff;
@@ -600,6 +576,64 @@ svg.hide {
         }
       }
     }
+  }
+  .img-overlay {
+    position: absolute;
+    background: rgba(255,255,255,0);
+    @include transition();
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    padding: 20px;        
+    .overlay-wrap {
+      opacity: 0;
+      position: relative;
+      z-index: 999;
+      color: #fff;
+      text-align: left;
+      @include transition();
+      h4 {
+        font-size: $ft-sm;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+        span {
+          font-size: $ft-xs;
+          position: relative;
+          bottom: 1px;
+        }                        
+      }
+      p {
+        font-style: italic;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 26px;
+        padding-bottom: 14px;
+      }
+      .left, .right {
+        width: auto;
+      }
+      .left {
+        margin-right: 50px;
+      }
+      .right {
+        float: none;
+      }
+      .slide-right {
+        position: relative;
+        left: -300px;
+        @include transition();
+      }
+      .slide-right-slow {            
+        left: -300px;
+        @include transition-slow();
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        font-size: 18px;
+        line-height: 26px;
+      }          
+    }        
   }
 }
 
@@ -816,7 +850,8 @@ footer {
 // Media Queries ~~~~~~~~~
 @media screen and (max-width: 1200px) {
   #projects .projects .img-wrap {
-    margin: 10px 1%;
+    // margin: 10px 1%;
+    margin: 0px 0%;
   }
   #projects .projects .img-wrap .img-overlay .overlay-wrap li {        
     font-size: 16px;
@@ -830,7 +865,8 @@ footer {
 
 @media screen and (max-width: 992px) {
   #projects .projects .img-wrap {
-    margin: 7px 1%;
+    // margin: 7px 1%;
+    margin: 0px 0%;
   }
   #projects .projects .img-wrap .img-overlay {
     padding: 14px;
