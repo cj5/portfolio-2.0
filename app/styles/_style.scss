@@ -622,7 +622,7 @@ img.proj-2 {
 }
 img.proj-3 {
   // background: #ddd;
-  background: #D5E4ED;        
+  background: #FFE4D3;        
 }
 img.proj-4 {
   background: #C1E882;
@@ -751,7 +751,7 @@ img.proj-10 {
       fill: $color-1;
       margin-right: 6px;
       position: relative;
-      top: 5px;  
+      top: 5px;
       @include transition();
     }
     p {
@@ -769,18 +769,20 @@ img.proj-10 {
     }
   }
   img {
-    width: 70%;    
+    max-width: 360px;
     border: 2px solid #0F1BFF;
   }
   img.bg-color {
     background-color: #ccc;
   }
   h2 {
-    margin-top: 50px;
+    margin-top: 42px;
   }
   h4 {
     margin-top: 6px;
     font-style: italic;
+    border-bottom: 2px solid $color-1;
+    padding-bottom: 27px;
   }
   p {
     line-height: 22px;
@@ -788,11 +790,9 @@ img.proj-10 {
   }
   ul {
     margin-top: 50px;
-    // padding-left: 20px;
-    // list-style: disc;
   }
   li {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
   .left {
     position: relative;
@@ -806,6 +806,8 @@ img.proj-10 {
     margin-left: 3%;
     img {
       width: 100%;
+      max-width: inherit;
+      max-width: initial;
       margin-bottom: 30px;     
     }
     ul {
@@ -821,6 +823,28 @@ img.proj-10 {
       img {
         margin-bottom: 0;
       }
+    }
+  }
+  ul.tech-icons {
+    margin-top: 80px;
+    overflow: hidden;
+    li {
+      position: relative;
+      width: 50%;
+      float: left;
+    }
+    .icon {
+      fill: $color-1;
+      width: 40px;
+      height: 40px;
+    }
+    p {
+      display: inline-block;
+      margin: 0 0 0 24px;
+      font-size: 18px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
@@ -957,6 +981,15 @@ footer {
     margin-bottom: 20px;
     padding-bottom: 12px;
   }
+  #details ul.tech-icons {
+    .icon {
+      width: 25px;
+      height: 25px;
+    }
+    p {
+      font-size: 16px;
+    }
+  } 
 }
 
 @media screen and (max-width: 992px) {
@@ -984,6 +1017,24 @@ footer {
   }
   #projects .projects .img-wrap:hover .slide-right-slow {
     left: 12px!important;
+  }
+  #details {
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+    h4 {
+      font-size: 14px;     
+    }
+    img {
+      max-width: 260px;
+    }
+    ul {
+      margin-top: 30px;
+    }
+    ul.tech-icons {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -1087,6 +1138,19 @@ footer {
       padding-bottom: 3px;      
     }  
   }
+  #details {
+    .left {
+      width: 100%;
+    }
+    .right {
+      margin-top: 30px;
+      width: 100%;
+      text-align: center;
+    }
+    ul.tech-icons {
+      display: none;
+    }    
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1154,7 +1218,18 @@ footer {
     .copy-icon {
       font-size: 24px;
     }
-  } 
+  }
+  #details .right li {
+    width: 100%;
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
+  #details img {
+    width: 100%;
+    max-width: inherit;
+    max-width: initial;
+  }
 }
 
 @media screen and (max-width: 350px) {
