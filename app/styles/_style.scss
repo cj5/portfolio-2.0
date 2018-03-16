@@ -851,8 +851,9 @@ img.proj-10 {
   .contact-wrapper {
     animation: 0.65s ease-in-out slideInFromBottom;
     margin-top: $mg-md;
-    position: relative;
-    right: 8px;
+    text-align: center;
+    // position: relative;
+    // right: 8px;
     a {
       margin-right: 20px;
       .icon {
