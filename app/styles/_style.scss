@@ -649,7 +649,7 @@ img.proj-10 {
 // About ~~~~~~~~~~~
 #about { 
   .about-wrapper {
-    max-width: 720px;    
+    max-width: 740px;    
     margin: 0 auto;
     display: block;
     // border: 2px solid $color-1;
@@ -658,7 +658,7 @@ img.proj-10 {
   }
   .about-section {
     overflow: hidden;
-    margin-bottom: $mg-lg;
+    margin-bottom: 70px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -678,9 +678,6 @@ img.proj-10 {
     padding-left: 4%;
     margin-left: 0;
     border-left: 2px solid $color-1;
-  }
-  h4 {
-    // font-style: italic;
   }
   h5 {
     margin-top: 0;
@@ -708,13 +705,13 @@ img.proj-10 {
     }
     ul { 
       margin-top: 16px;     
-      margin-bottom: 46px;
+      margin-bottom: 66px;
       &:last-child {
         margin-bottom: 0;
       }
       li {
         line-height: 18px;
-        margin-bottom: 12px;
+        margin-bottom: 24px;
         &:last-child {
           margin-bottom: 0;
         }
