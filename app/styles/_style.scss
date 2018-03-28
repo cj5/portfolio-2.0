@@ -341,14 +341,14 @@ header {
     ul {
       float: right;
       border-top: 2px solid #fff;
-      padding-top: 12px;
+      padding-top: 30px;
     }
     a {
       font-size: $ft-lg;
       color: #fff;
       li {
         font-size: $ft-lg;
-        margin-bottom: $mg-xs;
+        margin-bottom: $mg-sm;
         color: #fff;
         line-height: 40px;
       }      
@@ -692,7 +692,7 @@ img.proj-10 {
         @include transition();
       }
       &:hover {
-        background: $color-1;
+        background-color: $color-1;
       }
       &:hover .icon {
         fill: #fff;        
@@ -876,6 +876,10 @@ img.proj-10 {
     // right: 8px;
     a {
       margin-right: 30px;
+      display: inline-block;
+      &:last-child {
+        margin-right: 0;
+      }
       .icon {
         font-size: 50px;
         display: inline-block;
@@ -1111,6 +1115,12 @@ footer {
     }
   }
   // END removes project img hover styles
+  #resume .right a:hover {
+    background-color: #fff;
+  }
+  #resume .right a:hover .icon {
+    fill: $color-1;
+  }
   #contact .contact-wrapper a .icon:hover {
     fill: $color-1;
     background-color: #fff;
