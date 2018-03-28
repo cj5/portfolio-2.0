@@ -646,9 +646,9 @@ img.proj-10 {
   background: #5FB8A1;
 }
 
-// About ~~~~~~~~~~~
-#about { 
-  .about-wrapper {
+// Résumé ~~~~~~~~~~~
+#resume {
+  .resume-wrapper {
     max-width: 740px;    
     margin: 0 auto;
     display: block;
@@ -656,7 +656,7 @@ img.proj-10 {
     // padding: 20px;
     margin-top: $mg-lg;
   }
-  .about-section {
+  .resume-section {
     overflow: hidden;
     margin-bottom: 70px;
     &:last-child {
@@ -678,6 +678,26 @@ img.proj-10 {
     padding-left: 4%;
     margin-left: 0;
     border-left: 2px solid $color-1;
+    a {
+      padding: 3px 5px 1px;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      right: 7px;
+      @include transition();
+      .icon {
+        width: 40px;
+        height: 40px;
+        fill: $color-1;
+        @include transition();
+      }
+      &:hover {
+        background: $color-1;
+      }
+      &:hover .icon {
+        fill: #fff;        
+      }
+    }
   }
   h5 {
     margin-top: 0;
@@ -1118,7 +1138,7 @@ footer {
       margin: 0 !important;
     }
   }
-  #about {
+  #resume {
     .left {
       width: 100%;
       margin: 0;
@@ -1152,7 +1172,7 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  #about h5 {
+  #resume h5 {
     // font-size: 14px;
   }
   .experience {
@@ -1165,7 +1185,7 @@ footer {
       margin-top: 6px;      
     }
   }
-  #about {
+  #resume {
     .skills {
       .desktop-skills-list {
         display: none;
@@ -1184,7 +1204,7 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
-  #about .qualifications li {
+  #resume .qualifications li {
     margin-bottom: 10px;
     line-height: 17px;
   }
@@ -1231,7 +1251,7 @@ footer {
 }
 
 @media screen and (max-width: 350px) {
-  #about .skills ul:last-child {
+  #resume .skills ul:last-child {
     width: 42%;
     margin-left: 6%;
   }

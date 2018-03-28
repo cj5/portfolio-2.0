@@ -70,8 +70,8 @@ $(document).ready(function(){
 
 });
 
-//////////////
-// cellular automata
+// ////////////////////
+// // cellular automata
 
 // let randomBinary = () => {
 //   return Math.round(Math.random())
