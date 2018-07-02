@@ -17,6 +17,18 @@ body {
   color: $color-1;  
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $color-1;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0);
+  // border-left: 2px solid $color-1;
+}
+
 h1 {
   color: $color-1;
 }
@@ -87,6 +99,11 @@ ul {
   cursor: pointer;
   opacity: 1;
   filter: alpha(opacity=50);
+}
+
+.row.automata {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 // Navicon ~~~~~~~~~~
@@ -612,38 +629,35 @@ svg.hide {
     }        
   }
 }
-img.proj-1 {
-  // background: #b7dbf8;
+img.tc-wrecker {  
   background: #B2D2E5;
 }
-img.proj-2 {
-  // background: #1EB8ED;
+img.corval {  
   background: #0048A6;
 }
-img.proj-3 {
-  // background: #ddd;
+img.comparatio {  
   background: #FFE4D3;        
 }
-img.proj-4 {
+img.present-moment {
   background: #C1E882;
 }
-img.proj-5 {
+img.azure {
   background: #D3EFFF;
 }
-img.proj-6 {
+img.signature {
   background: #eee;
 }
-img.proj-7 {
+img.lahs {
   background: #F5F5F5;
 }
-img.proj-8 {
-  background: #111;
+img.power-eq {
+  background: #0A56A1;
 }
-img.proj-9 {
+img.mastermind {
   background: #333;
 }
-img.proj-10 {
-  background: #5FB8A1;
+img.corban {
+  background: #D6D9F1;
 }
 
 // Résumé ~~~~~~~~~~~
