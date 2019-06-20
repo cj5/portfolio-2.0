@@ -1,0 +1,50 @@
+$font-1: 'MrsEaves', Helvetica, Arial, sans-serif;
+$font-2: 'Work Sans', Helvetica, Arial, sans-serif;
+
+$black: #222;
+$gray-90: lighten(#000, 10%);
+$gray-80: lighten(#000, 20%);
+$gray-70: lighten(#000, 30%);
+$gray-60: lighten(#000, 40%);
+$gray-50: lighten(#000, 50%);
+$gray-40: lighten(#000, 60%);
+$gray-30: lighten(#000, 70%);
+$gray-20: lighten(#000, 80%);
+$gray-10: lighten(#000, 90%);
+$gray-5: lighten(#000, 95%);
+
+
+$fz-xxl: 42px;
+$fz-xl: 30px;
+$fz-lg: 20px;
+$fz-md: 18px;
+$fz-sm: 16px;
+$fz-xs: 14px;
+$fz-xxs: 12px;
+
+$fz:
+  'xxl' $fz-xxl,
+  'xl' $fz-xl,
+  'lg' $fz-lg,
+  'md' $fz-md,
+  'sm' $fz-sm,
+  'xs' $fz-xs,
+  'xxs' $fz-xxs
+;
+@each $i in $fz {
+  .fz-#{nth($i, 1)} {
+    font-size: nth($i, 2) !important;
+    line-height: nth($i, 2) + 4px !important;
+  }
+}
+
+// media queries
+$mxw-lg: '(max-width: 991px)';
+$mxw-md: '(max-width: 767px)';
+$mxw-sm: '(max-width: 575px)';
+$mxw-xs: '(max-width: 419px)';
+
+$mnw-xs: '(min-width: 420px)';
+$mnw-sm: '(min-width: 576px)';
+$mnw-md: '(min-width: 768px)';
+$mnw-lg: '(min-width: 992px)';

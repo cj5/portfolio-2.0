@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'MrsEaves';
+  src: url('../fonts/mrseavesroman/mrseavesot-roman-webfont.woff2') format('woff2'),
+       url('../fonts/mrseavesroman/mrseavesot-roman-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MrsEaves';
+  src: url('../fonts/mrseavesbold/mrseavesot-bold-webfont.woff2') format('woff2'),
+       url('../fonts/mrseavesbold/mrseavesot-bold-webfont.woff') format('woff');
+  font-weight: bold;
+}
+
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap');

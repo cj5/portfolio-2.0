@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+}
+#app {
+  font-family: $font-2;
+  font-weight: normal;
+  color: $black;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-1;
+    margin: 0;
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: $black;
+    border-bottom: 1px solid transparent;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 3px;
+      background-color: transparent;
+      @include transition;
+    }
+    &:hover:after {
+      background-color: #000;
+    }
+  }
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  p,
+  li,
+  a {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .flex {
+    display: flex;
+  }
+  .jc-between {
+    justify-content: space-between;
+  }
+  .jc-center {
+    justify-content: center;
+  }
+  .ai-center {
+    align-items: center;
+  }
+  .mb-3 {
+    margin-bottom: 30px;
+  }
+  
+  // HEADER
+  .header {
+    background-color: $black;
+    margin-bottom: 40px;
+  }
+  .header-ht {
+    height: 80px;
+  }
+  .logo {
+    font-size: 40px;
+    font-weight: normal;
+    color: #fff;
+  }
+  nav {
+    li {
+      margin-left: 20px;
+    }
+    a {
+      font-family: $font-1;
+      font-size: 20px;
+      color: #fff;
+      &:hover:after {
+        background-color: #fff;
+      }
+    }
+  }
+  // END HEADER
+}
