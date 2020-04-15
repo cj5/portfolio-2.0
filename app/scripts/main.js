@@ -1,29 +1,27 @@
-console.log('Portfolio-2.0');
+// console.log('Portfolio-2.0');
 
 $(document).ready(function(){  
 
   // smooth scroll
   $(document).on('click', 'a[href^="#"]', function (event) {
-      event.preventDefault();
+    event.preventDefault();
 
-      $('html, body').animate({
-          scrollTop: $($.attr(this, 'href')).offset().top
-      }, 500);
+    $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
   });
 
   $('body').css('overflow-y', 'hidden');
   let vpW = $(window).width();
-  console.log('vp width: ', vpW);
+  // console.log('vp width: ', vpW);
   $('body').css('overflow-y', 'visible');
 
   let projImgW = $('.projects img').width();
   let projImgH = $('.projects img').height();
-  $(window).on('load', function() {
-    let projImgW = $('.projects img').width();
-    let projImgH = $('.projects img').height();
-    $('.img-overlay').css('width', projImgW);
-    $('.img-overlay').css('height', projImgH);
-  });
+  projImgW = $('.projects img').width();
+  projImgH = $('.projects img').height();
+  $('.img-overlay').css('width', projImgW);
+  $('.img-overlay').css('height', projImgH);
 
   let headerHt = $('header').outerHeight();  
   
@@ -50,15 +48,15 @@ $(document).ready(function(){
   function updateContainer() {
     $('body').css('overflow-y', 'hidden');
     let vpW = $(window).width();
-    console.log('vp width: ', vpW);
+    // console.log('vp width: ', vpW);
     $('body').css('overflow-y', 'visible');
 
     let projImgW = $('.projects img').width();
-    let projImgH = $('.projects img').height();  
+    let projImgH = $('.projects img').height();
     $('.img-overlay').css('width', projImgW);
     $('.img-overlay').css('height', projImgH);
 
-    let alignMobProjCap = ((vpW - (projImgW - 2)) / 2) - 26;
+    alignMobProjCap = ((vpW - (projImgW - 2)) / 2) - 26;
     $('.mobile-project-caption').css('width', projImgW);
 
     $('.wrapper').css('display', 'none');
@@ -85,8 +83,8 @@ for (let i = 0; i <= 200; i++) {
   let div = document.createElement('div')
   document.querySelector('.row').appendChild(div)
   div.classList.add(randomBinary() ? 'true' : 'false')
-  console.log('row width: ', row.offsetWidth)
-  console.log('window width: ', window.innerWidth)
+  // console.log('row width: ', row.offsetWidth)
+  // console.log('window width: ', window.innerWidth)
   if (row.offsetWidth >= window.innerWidth - 10) {
     break
   }
